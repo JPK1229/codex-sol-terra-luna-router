@@ -1,0 +1,20 @@
+name: validate
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate package
+        run: python3 tests/test_package.py
+      - name: Validate install lifecycle
+        run: bash tests/test_install.sh
+      - name: Check whitespace
+        run: git diff --check

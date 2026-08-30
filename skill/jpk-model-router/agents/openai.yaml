@@ -1,0 +1,7 @@
+interface:
+  display_name: "J.P Codex Model Router"
+  short_description: "Route Codex work across Luna, Terra, and Sol"
+  default_prompt: "Use $jpk-model-router to classify this Codex task, delegate it to one GPT-5.6 subagent with explicit reasoning effort, verify the result, and report the actual route."
+
+policy:
+  allow_implicit_invocation: false
